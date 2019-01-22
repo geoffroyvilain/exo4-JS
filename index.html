@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EXO4JS</title>
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+        <form>
+            <label for="firstname">Nom : </label><input type="text" name="firstname" id="firstname"/>
+            <label for="lastname">Prénom : </label><input type="text" name="lastname" id="lastname"/>
+            <label for="city">Ville : </label><input type="text" name="city" id="city"/>
+            <button name="submit" id="submit" onclick="getNews()">Valider</button> <!--ONCLICK : EVENEMENT (FONCTION) QUI NE S'EFFECTUE QUE AU CLICK ET PAS AVANT-->
+        </form>
+        <script>
+          function getNews() {   //CREE LA FONCTION NOMME ICI getNews(CAD getxxx)//
+  //VAR:CREE LA VARIABLE     OBJET      SELECTEUR      PROPRIETE  .VALUE POUR VALEUR (SINON IL MET NOM:VALEUR)//
+          var firstName = document.getElementById('firstname').value;//DANS LE DOCUMENT TU RECUPERES LA VALEUR DE l'ELEMENT FIRSTNAME//
+          var lastName = document.getElementById('lastname').value;
+          var city = document.getElementById('city').value;
+
+          //ISNAN :VERIFIE SI VALEUR EST VIDE//
+              if (isNaN(firstname)==true && isNaN(lastname)==true && isNaN(city)==true) {
+            alert('Nom : '+firstName+'\nPrénom : '+lastName+'\nVille : '+city); //  \n RETOUR A LA LIGNE//
+          }else{
+          alert('Merci de renseigner les champs');
+}
+}
+
+        </script>
+    </body>
+</html>
