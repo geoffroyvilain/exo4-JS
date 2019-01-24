@@ -12,20 +12,28 @@
             <button name="submit" id="submit" onclick="getNews()">Valider</button> <!--ONCLICK : EVENEMENT (FONCTION) QUI NE S'EFFECTUE QUE AU CLICK ET PAS AVANT-->
         </form>
         <script>
-          function getNews() {   //CREE LA FONCTION NOMME ICI getNews(CAD getxxx)//
+          function getNews(){   //CREE LA FONCTION NOMME ICI getNews(CAD getxxx)//
   //VAR:CREE LA VARIABLE     OBJET      SELECTEUR      PROPRIETE  .VALUE POUR VALEUR (SINON IL MET NOM:VALEUR)//
-          var firstName = document.getElementById('firstname').value;//DANS LE DOCUMENT TU RECUPERES LA VALEUR DE l'ELEMENT FIRSTNAME//
-          var lastName = document.getElementById('lastname').value;
+/*REGEX*/ var regexName = /^[a-zA-Z ]+$/;
+          var firstname = document.getElementById('firstname').value;  //DANS LE DOCUMENT TU RECUPERES LA VALEUR DE l'ELEMENT FIRSTNAME//
+          var lastname = document.getElementById('lastname').value;
           var city = document.getElementById('city').value;
-
+          if (lastname.match(regexName) && firstname.match(regexName) && city.match(regexName)){
+            alert('Nom : '+firstname+'\nPrénom : '+lastname+'\nVille : '+city);
+          }else {
+            alert('Ceci n\'est pas autorisé');
+          }
+        }
+          /*ma version
           //ISNAN :VERIFIE SI VALEUR EST VIDE//
               if (isNaN(firstname)==true && isNaN(lastname)==true && isNaN(city)==true) {
+
             alert('Nom : '+firstName+'\nPrénom : '+lastName+'\nVille : '+city); //  \n RETOUR A LA LIGNE//
           }else{
           alert('Merci de renseigner les champs');
 }
 }
-
+*/
         </script>
     </body>
 </html>
